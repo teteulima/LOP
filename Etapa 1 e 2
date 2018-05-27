@@ -1,0 +1,50 @@
+var x= 70;
+	var y = 340 ;
+	var diametro = 50 ;
+
+function setup() {
+
+   createCanvas(720, 400);
+
+}
+
+
+ 
+
+function draw() {
+	 background(102);
+	
+	 ellipse(x,y,diametro,diametro);
+     rect(600, 320, 63, 63);
+ 	
+	
+ 
+}
+
+
+function keyPressed() {
+  switch (keyCode) {
+    case 38: // seta para cima
+      if (y>0) {
+        y = y -5;
+      }
+      break;
+    case 37: // seta para esquerda
+      if (x>0) {
+        x = x -5;
+      }
+      break;
+    case 39: // seta para direita
+      if (x<720) {
+        x =x +5;
+      }
+      break;
+    case 40:// seta para baixo
+      if (y<400) {
+        y =y+5;
+      }
+      break;
+  }
+  
+ 
+}
