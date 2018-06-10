@@ -1,0 +1,129 @@
+var x= 70;
+	var y = 340 ;
+	var diametro = 50 ;
+ var mov = false;
+ var x1 = 99999;
+ var y1 = 99999;
+ var x2 = 900;
+ var y2 = Math.floor(Math.random() * 300);
+
+ var pontos= 00;
+ var vidas =3;
+ var nivel = 1;
+ 
+function setup() {
+
+   createCanvas(720, 400);
+ 
+
+ 
+}
+
+
+ 
+
+function draw() {
+	 background(102);
+	
+  switch (keyCode) {
+	  
+	case 66:
+	
+	if (x1>0) {
+		x1= x - 20;
+        x1 = x1 -5;
+         
+	    y1 = y -1 ;
+        y1 = y1 -5
+      }
+	 
+    
+    case 38: // seta para cima
+   
+   
+      if (y>0) {
+		
+        y = y -5;
+       }
+      
+  
+      break;
+    case 37: // seta para esquerda
+      if (x>0) {
+        x = x -5;
+      }
+      break;
+    case 39: // seta para direita
+      if (x<720) {
+        x =x +5;
+      }
+      break;
+    case 40:// seta para baixo
+      if (y<400) {
+        y =y+5;
+      }
+      break;
+  }
+	
+	if (y == 400){
+		y = 0;
+	}
+	if ( x == 720){
+		x = 0;
+	}
+	if ( y == 0 ){
+		y=400
+	}
+	if ( x == 0){
+		x = 720;
+	}
+	rect( 7,10,150,60);
+textSize(18);
+text("Pontuação: ", 10, 30); 
+text("Vidas: " , 10, 46);
+text("Nível:  ", 10, 63);
+text(+pontos , 110, 30); 
+text( +vidas , 110, 46); 
+text( +nivel , 110, 63); 
+x2 = x2 -10;
+
+	 ellipse(x,y,diametro,diametro);
+    
+ 	ellipse(x1,y1,10,10);
+ 	
+ 		 rect(x2,y2,50,50);
+	if (x2 == 0){
+		x2 = 900;
+		y2 = Math.floor(Math.random() * 300);
+	}
+ if (y1 < y2 +10 && y1> y2 -10 || x1 < x2 +10 && x1> x2 - 10){
+	 pontos = pontos +10;
+	
+ }
+ 
+ if (y < y2 +10 && y> y2 -10 && x < x2 +10 && x> x2 - 10){
+      vidas = vidas -1;
+     
+	
+ }
+ 
+ 
+  if (pontos == 2000){
+	  nivel = 2
+	  
+  }
+  if (pontos == 3000){
+	  nivel = 3
+	  
+  }
+   if (pontos == 4000){
+	  alert("parabens voce venceu");
+	  
+  }
+ if (vidas==0){
+	 
+	 alert("Game over");
+ }
+}
+
+
