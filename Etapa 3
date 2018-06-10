@@ -1,0 +1,75 @@
+var x= 70;
+	var y = 340 ;
+	var diametro = 50 ;
+ var mov = false;
+
+ var x2;
+ var y2;
+ var aux;
+ var aux1;
+function setup() {
+
+   createCanvas(720, 400);
+  
+}
+
+
+ 
+
+function draw() {
+
+	
+	 background(102);
+	
+  switch (keyCode) {
+	  
+
+	
+    case 38: // seta para cima
+   
+   
+      if (y>0) {
+		
+        y = y -5;
+       }
+      
+  
+      break;
+    case 37: // seta para esquerda
+      if (x>0) {
+        x = x -5;
+      }
+      break;
+    case 39: // seta para direita
+      if (x<720) {
+        x =x +5;
+      }
+      break;
+    case 40:// seta para baixo
+      if (y<400) {
+        y =y+5;
+      }
+      break;
+  }
+	
+	if (y == 400){
+		y = 0;
+	}
+	if ( x == 720){
+		x = 0;
+	}
+	if ( y == 0 ){
+		y=400
+	}
+	if ( x == 0){
+		x = 720;
+	}
+
+
+	 ellipse(x,y,diametro,diametro);
+    
+
+ 	
+ 	
+
+}
